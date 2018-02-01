@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".imageloader.ImageLoaderListActivity" />
+        <activity android:name=".android_databinding.SingleBeanActivity" />
+        <activity android:name=".android_databinding.ImportMultipleBeanActivity" />
+        <activity android:name=".android_databinding.BeanAttributeActivity" />
     </application>
 
 </manifest>

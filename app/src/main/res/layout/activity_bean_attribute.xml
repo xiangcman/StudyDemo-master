@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import
+            alias="OriginalUser"
+            type="com.single.studydemo.android_databinding.bean.User" />
+
+        <import type="com.single.studydemo.android_databinding.bean.multiple.User" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="originalUser"
+            type="OriginalUser" />
+
+        <variable
+            name="user"
+            type="User" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{originalUser.firstName}"
+            android:visibility="@{originalUser.isStutent?View.VISIBLE:View.GONE}" />
+
+        <!--测试bean的属性，来设置view属性-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"
+            android:visibility="@{user.isStutent?View.VISIBLE:View.GONE}" />
+
+    </LinearLayout>
+
+</layout>

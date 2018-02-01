@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.single.studydemo.LanuchActivity">
 
-    <Button
-        android:id="@+id/imageloader_btn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="imageloader例子"
-        android:textAllCaps="false" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义imageloader图片转换、缓存" />
+
+        <Button
+            android:id="@+id/imageloader_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="imageloader例子"
+            android:textAllCaps="false" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.01dp"
+            android:background="#cccccc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="android databing学习部分" />
+
+        <Button
+            android:id="@+id/databing_single_bean_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="databing单个bean例子"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/databing_multiple_bean_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="多个bean同名使用import中alias属性"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/databing_bean_attribute_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="通过bean属性来设置view的属性"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</ScrollView>
