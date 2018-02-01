@@ -6,6 +6,7 @@ import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.single.studydemo.imageloader.cache.LimitCountMemoryCache;
 
 /**
  * Created by xiangcheng on 18/2/1.
@@ -21,6 +22,7 @@ public class CommonApplication extends Application {
         config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
         config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
         config.tasksProcessingOrder(QueueProcessingType.LIFO);
+        config.memoryCache(new LimitCountMemoryCache(2));
         config.writeDebugLogs(); // Remove for release app
 
         // Initialize ImageLoader with configuration.
