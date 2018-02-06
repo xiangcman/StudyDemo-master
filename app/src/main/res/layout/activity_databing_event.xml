@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bing="http://schemas.android.com/apk/res-auto">
+
+    <!--data中class属性可以定义该布局文件生成的ActivityBeanAttributeBinding在那个包下，这里如果不加class属性的话，
+    默认是com.single.studydemo.databinding下面的-->
+    <data>
+
+        <variable
+            name="event"
+            type="com.single.studydemo.android_databinding.event.DataBingEvent" />
+
+        <variable
+            name="task"
+            type="com.single.studydemo.android_databinding.event.DataBingEvent.Task" />
+
+        <variable
+            name="eventHandler"
+            type="com.single.studydemo.android_databinding.event.EventHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--@{handler::onClickFriend}代表调用EventHandler类中的onClickFriend方法，
+        注意onClickFriend方法的参数必须与onClick(View v)方法的参数相匹配。-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{eventHandler::onClickFriend}"
+            android:text="演示方法参数和onClick参数名一样的情况" />
+
+        <!--不指定参数的runTask-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> event.runTask(task)}"
+            android:text="不指定参数的调用" />
+
+        <!--指定参数的runTask-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> event.runTask(view,task)}"
+            android:text="指定参数的调用" />
+
+        <!--指定参数的runTask-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> event.runTask(view,task,false)}"
+            android:text="指定参数的调用" />
+
+    </LinearLayout>
+
+</layout>

@@ -23,14 +23,10 @@
             android:text="imageloader例子"
             android:textAllCaps="false" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.01dp"
-            android:background="#cccccc" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="android databing学习部分" />
 
         <Button
@@ -52,6 +48,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="通过bean属性来设置view的属性"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/databing_observable_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="通过observable来刷新view"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/databing_event_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="event传递特性"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/databing_rv_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recyclerView使用dataBing"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/databing_custom_property_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="databing中自定义属性"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/databing_view_stub_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="databing中使用viewStub"
             android:textAllCaps="false" />
 
     </LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <!--include中定义的对象，需要和传过来的对象保持一致-->
+        <variable
+            name="user"
+            type="com.single.studydemo.android_databinding.bean.multiple.User" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我是include部分" />
+
+        <!--测试bean的属性，来设置view属性-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}" />
+
+        <!--演示自定义类的使用-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}" />
+
+    </LinearLayout>
+</layout>

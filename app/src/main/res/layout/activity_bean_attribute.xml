@@ -1,23 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bing="http://schemas.android.com/apk/res-auto">
 
+    <!--data中class属性可以定义该布局文件生成的ActivityBeanAttributeBinding在那个包下，这里如果不加class属性的话，
+    默认是com.single.studydemo.databinding下面的-->
     <data>
 
+        <!--如果类名一样的，此时可以用alias属性给类起别名,方便在variable标签中用此别名-->
         <import
             alias="OriginalUser"
             type="com.single.studydemo.android_databinding.bean.User" />
 
         <import type="com.single.studydemo.android_databinding.bean.multiple.User" />
 
+        <import type="java.util.List" />
+
         <import type="android.view.View" />
+
+        <!--自定义类开始定义部分，这里要注意了，使用自定义类的时候，不能使用import中导入的类，这里需要全类名路径的方式-->
+        <import type="com.single.studydemo.android_databinding.utils.StringUtils" />
+
+        <variable
+            name="user"
+            type="com.single.studydemo.android_databinding.bean.multiple.User" />
+        <!--自定义类结束定义部分-->
 
         <variable
             name="originalUser"
             type="OriginalUser" />
 
+        <!--这里注意了，其实就是List<User>，这里转义了-->
         <variable
-            name="user"
-            type="User" />
+            name="userList"
+            type="List&lt;OriginalUser&gt;" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="buttonClick"
+            type="android.view.View.OnClickListener" />
+
+        <!--<variable-->
+        <!--name="stringUtils"-->
+        <!--type="StringUtils" />-->
+
+        <!--<variable-->
+        <!--name="user"-->
+        <!--type="User" />-->
+
     </data>
 
     <LinearLayout
@@ -37,6 +69,36 @@
             android:layout_height="wrap_content"
             android:text="@{user.firstName}"
             android:visibility="@{user.isStutent?View.VISIBLE:View.GONE}" />
+
+        <!--演示自定义类的使用-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{StringUtils.capitalize(user.firstName)}" />
+
+        <!--演示集合的使用-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userList.get(0).firstName}" />
+
+        <!--演示集合的使用，下标通过动态设置-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userList[index].firstName}" />
+
+        <!--定义button的方式-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{buttonClick}"
+            android:text="点击测试" />
+
+        <!--include要用到user对象，此时需要把user对象传给include布局-->
+        <include
+            layout="@layout/include_layout"
+            bing:user="@{user}" />
 
     </LinearLayout>
 

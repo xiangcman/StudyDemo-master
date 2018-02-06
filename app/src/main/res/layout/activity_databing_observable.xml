@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bing="http://schemas.android.com/apk/res-auto">
+
+    <!--data中class属性可以定义该布局文件生成的ActivityBeanAttributeBinding在那个包下，这里如果不加class属性的话，
+    默认是com.single.studydemo.databinding下面的-->
+    <data>
+
+        <!--如果类名一样的，此时可以用alias属性给类起别名,方便在variable标签中用此别名-->
+        <import
+            alias="OriginalUser"
+            type="com.single.studydemo.android_databinding.bean.User" />
+
+        <import type="com.single.studydemo.android_databinding.bean.multiple.User" />
+
+        <import type="java.util.List" />
+
+        <import type="android.view.View" />
+
+        <!--自定义类开始定义部分，这里要注意了，使用自定义类的时候，不能使用import中导入的类，这里需要全类名路径的方式-->
+        <import type="com.single.studydemo.android_databinding.utils.StringUtils" />
+
+        <variable
+            name="user"
+            type="com.single.studydemo.android_databinding.observable.ObservableUser" />
+        <!--自定义类结束定义部分-->
+
+        <variable
+            name="originalUser"
+            type="OriginalUser" />
+
+        <!--这里注意了，其实就是List<User>，这里转义了-->
+        <variable
+            name="userList"
+            type="List&lt;OriginalUser&gt;" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="buttonClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="observableFieldbuttonClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="observableMapbuttonClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="observableFieldsUser"
+            type="com.single.studydemo.android_databinding.observable.ObservableFieldsUser" />
+
+        <!--看到了没直接通过自带的ObservableArrayMap-->
+        <import type="android.databinding.ObservableMap" />
+        <!--ObservableMap<String,String>,只不过这里是转义了-->
+        <variable
+            name="observableArrayMap"
+            type="ObservableMap&lt;String, String&gt;" />
+
+        <!--<variable-->
+        <!--name="firstName"-->
+        <!--type="String" />-->
+
+        <!--<variable-->
+        <!--name="lastName"-->
+        <!--type="String" />-->
+
+        <!--<variable-->
+        <!--name="stringUtils"-->
+        <!--type="StringUtils" />-->
+
+        <!--<variable-->
+        <!--name="user"-->
+        <!--type="User" />-->
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--继承BaseObservable方式实现的-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{buttonClick}"
+            android:text="测试Observale"
+            android:textAllCaps="false" />
+
+        <!--采用ObservableField方式实现的-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{observableFieldsUser.firstName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{observableFieldsUser.lastName}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{observableFieldbuttonClick}"
+            android:text="测试ObservaleField"
+            android:textAllCaps="false" />
+
+        <!--下面采用databing里面自带的ObservableArrayMap实现view刷新-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{observableArrayMap[`firstName`]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{observableArrayMap[`lastName`]}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{observableMapbuttonClick}"
+            android:text="测试Databing自带的ObservableArrayMap"
+            android:textAllCaps="false" />
+
+        <!--下面这个例子演示双向绑定的特性，即view的属性发生改变的时候，数据也跟着变化
+        为了演示双向绑定，这里就顺便弄了个edittext，更为了说了view发生变化了,这里用的是@=-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@={observableArrayMap[`firstName`]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{observableArrayMap[`firstName`]}" />
+
+    </LinearLayout>
+
+</layout>

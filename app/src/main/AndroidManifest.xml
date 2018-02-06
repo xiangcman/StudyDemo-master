@@ -24,6 +24,11 @@
         <activity android:name=".android_databinding.SingleBeanActivity" />
         <activity android:name=".android_databinding.ImportMultipleBeanActivity" />
         <activity android:name=".android_databinding.BeanAttributeActivity" />
+        <activity android:name=".android_databinding.DataBingObservableActivity" />
+        <activity android:name=".android_databinding.DataBingEventActivity" />
+        <activity android:name=".android_databinding.DataBingRecyclerViewActivity" />
+        <activity android:name=".android_databinding.DataBingCustomPropertyActivity" />
+        <activity android:name=".android_databinding.DataBingViewStubActivity" />
     </application>
 
 </manifest>
