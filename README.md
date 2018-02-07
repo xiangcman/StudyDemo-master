@@ -25,6 +25,8 @@
 ```
 见[SingleBeanActivity](https://github.com/xiangcman/StudyDemo-master/blob/master/app/src/main/java/com/single/studydemo/android_databinding/SingleBeanActivity.java)
 
+
+
 - 多个bean重名问题
 ```
 <data>
@@ -55,25 +57,37 @@
 ```
 见[ImportMultipleBeanActivity](https://github.com/xiangcman/StudyDemo-master/blob/master/app/src/main/java/com/single/studydemo/android_databinding/ImportMultipleBeanActivity.java)
 
+
+
 - 属性复杂赋值问题
 
 见[BeanAttributeActivity](https://github.com/xiangcman/StudyDemo-master/blob/master/app/src/main/java/com/single/studydemo/android_databinding/BeanAttributeActivity.java)
+
+
 
 - 事件传递问题
 
 见[DataBingEventActivity](https://github.com/xiangcman/StudyDemo-master/blob/master/app/src/main/java/com/single/studydemo/android_databinding/DataBingEventActivity.java)
 
+
+
 - view、data双向(单向)传递问题
 
 见[DataBingObservableActivity](https://github.com/xiangcman/StudyDemo-master/blob/master/app/src/main/java/com/single/studydemo/android_databinding/DataBingObservableActivity.java)
+
+
 
 - recyclerView中使用问题
 
 见[DataBingRecyclerViewActivity](https://github.com/xiangcman/StudyDemo-master/blob/master/app/src/main/java/com/single/studydemo/android_databinding/DataBingRecyclerViewActivity.java)
 
+
+
 - 自定义属性问题
 
 见[DataBingCustomPropertyActivity](https://github.com/xiangcman/StudyDemo-master/blob/master/app/src/main/java/com/single/studydemo/android_databinding/DataBingCustomPropertyActivity.java)
+
+
 
 - ViewStub在databing中使用问题
 
