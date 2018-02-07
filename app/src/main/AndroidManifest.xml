@@ -29,6 +29,7 @@
         <activity android:name=".android_databinding.DataBingRecyclerViewActivity" />
         <activity android:name=".android_databinding.DataBingCustomPropertyActivity" />
         <activity android:name=".android_databinding.DataBingViewStubActivity" />
+        <activity android:name=".rxandroid.RxAndroidEventActivity" />
     </application>
 
 </manifest>

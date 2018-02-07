@@ -85,5 +85,17 @@
             android:text="databing中使用viewStub"
             android:textAllCaps="false" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="RxJava学习部分" />
+
+        <Button
+            android:id="@+id/rx_bt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxJava事件监听" />
+
     </LinearLayout>
 </ScrollView>

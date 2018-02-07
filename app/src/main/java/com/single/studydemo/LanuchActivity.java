@@ -14,6 +14,7 @@ import com.single.studydemo.android_databinding.DataBingViewStubActivity;
 import com.single.studydemo.android_databinding.ImportMultipleBeanActivity;
 import com.single.studydemo.android_databinding.SingleBeanActivity;
 import com.single.studydemo.imageloader.ImageLoaderListActivity;
+import com.single.studydemo.rxandroid.RxAndroidEventActivity;
 
 public class LanuchActivity extends AppCompatActivity {
 
@@ -73,6 +74,12 @@ public class LanuchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LanuchActivity.this, DataBingViewStubActivity.class));
+            }
+        });
+        findViewById(R.id.rx_bt1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LanuchActivity.this, RxAndroidEventActivity.class));
             }
         });
     }
