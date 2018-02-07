@@ -42,14 +42,6 @@
             name="buttonClick"
             type="android.view.View.OnClickListener" />
 
-        <!--<variable-->
-        <!--name="stringUtils"-->
-        <!--type="StringUtils" />-->
-
-        <!--<variable-->
-        <!--name="user"-->
-        <!--type="User" />-->
-
     </data>
 
     <LinearLayout
