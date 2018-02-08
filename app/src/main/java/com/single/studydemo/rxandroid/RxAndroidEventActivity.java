@@ -12,11 +12,16 @@ import android.widget.EditText;
 
 import com.single.studydemo.R;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Cancellable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Predicate;
 
 /**
  * Created by xiangcheng on 18/2/7.
@@ -44,13 +49,37 @@ public class RxAndroidEventActivity extends AppCompatActivity {
         });
 
         Observable<String> editTextObservable = createEditTextObservable();
-        editTextObservable.subscribe(new Consumer<String>() {
+//        editTextObservable.subscribe(new Consumer<String>() {
+//            @Override
+//            public void accept(String s) throws Exception {
+//                //这样做的好处就是以后要处理editText内容变化的时候，逻辑都在此处了
+//                Log.d(TAG, "input text:" + s);
+//            }
+//        });
+        editTextObservable.subscribe(new Observer<String>() {
             @Override
-            public void accept(String s) throws Exception {
-                //这样做的好处就是以后要处理editText内容变化的时候，逻辑都在此处了
-                Log.d(TAG, "input text:" + s);
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(String value) {
+                Log.d(TAG, "input text:" + value);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
             }
         });
+
+        //merge操作符可以实现多个被观察者让一个观察者接收到发射的消息
+        Observable<String> merge = Observable.merge(buttonObservable, editTextObservable);
     }
 
     //rxjava实现按钮的点击监听
@@ -108,6 +137,14 @@ public class RxAndroidEventActivity extends AppCompatActivity {
                     }
                 });
             }
-        });
+            //这里的filter操作符表示过滤的条件，test方法中返回true，被观察者才会去发射给观察者
+        }).filter(new Predicate<String>() {
+            @Override
+            public boolean test(String s) throws Exception {
+                return s.length() > 2;
+//                return false;
+            }
+            //debounce操作符指的是间隔多少时间，被观察者会发射给观察者，一般适用频繁操作的场景
+        }).debounce(1000, TimeUnit.MILLISECONDS);
     }
 }
