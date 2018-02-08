@@ -15,6 +15,7 @@ import com.single.studydemo.android_databinding.ImportMultipleBeanActivity;
 import com.single.studydemo.android_databinding.SingleBeanActivity;
 import com.single.studydemo.imageloader.ImageLoaderListActivity;
 import com.single.studydemo.rxandroid.RxAndroidEventActivity;
+import com.single.studydemo.rxandroid.RxAndroidIoActivity;
 
 public class LanuchActivity extends AppCompatActivity {
 
@@ -80,6 +81,12 @@ public class LanuchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LanuchActivity.this, RxAndroidEventActivity.class));
+            }
+        });
+        findViewById(R.id.rx_bt2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LanuchActivity.this, RxAndroidIoActivity.class));
             }
         });
     }

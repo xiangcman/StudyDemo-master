@@ -97,5 +97,11 @@
             android:layout_height="wrap_content"
             android:text="RxJava事件监听" />
 
+        <Button
+            android:id="@+id/rx_bt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxJava线程调度使用(模拟网路)" />
+
     </LinearLayout>
 </ScrollView>
