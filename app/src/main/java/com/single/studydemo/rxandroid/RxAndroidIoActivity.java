@@ -135,7 +135,7 @@ public class RxAndroidIoActivity extends AppCompatActivity {
         });
     }
 
-    private class ShowDatasAdapter extends RecyclerView.Adapter {
+    public class ShowDatasAdapter extends RecyclerView.Adapter {
         private List<IoBean> ioBeans;
 
         public ShowDatasAdapter(List<IoBean> ioBeans) {

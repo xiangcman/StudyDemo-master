@@ -103,5 +103,17 @@
             android:layout_height="wrap_content"
             android:text="RxJava线程调度使用(模拟网路)" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="RxBinding学习部分" />
+
+        <Button
+            android:id="@+id/rx_binding1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rxbinding事件监听" />
+
     </LinearLayout>
 </ScrollView>
