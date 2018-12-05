@@ -23,5 +23,6 @@ public class SingleBeanActivity extends AppCompatActivity {
         User user = new User("张三", "李四");
         //setUser方法会根据布局里面variable的name属性生成
         viewDataBinding.setUser(user);
+        viewDataBinding.setMode(3);
     }
 }

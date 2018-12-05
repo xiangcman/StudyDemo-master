@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Button1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:layout_constrainedWidth="true"该属性是防止左右约束失效新增的，-->
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Button2222222222222222222222222222222222222"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <!-- app:layout_constrainedWidth="true"这里如果是左侧的文字较长，那么光这个属性还不行-->
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Button33333333333333333333333333333333"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/button4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Button5"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/button6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Button6"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_goneMarginLeft="20dp" />
+
+    <!--  app:layout_constraintDimensionRatio="H,16:9"宽与高的比例是16比9-->
+    <!-- "W,9:16" 同样的效果 -->
+    <!-- app:layout_constraintWidth_percent="0.5"将宽度设置为屏幕宽度的一半-->
+    <!--app:layout_constraintHorizontal_bias="0"位置的调整，相当于以前的weight属性-->
+
+    <!-- app:layout_constraintGuide_begin="100dp"如果是横向的话，
+    那么 app:layout_constraintGuide_begin="100dp"表示距离顶部100dp的位置,
+    layout_constraintGuide_end距离父容器结束位置的距离
+    layout_constraintGuide_percent：用百分比表示的距离-->
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:layout_constraintWidth_percent="0.5"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+</android.support.constraint.ConstraintLayout>

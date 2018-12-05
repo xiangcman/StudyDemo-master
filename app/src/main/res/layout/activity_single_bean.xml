@@ -2,9 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="user"
             type="com.single.studydemo.android_databinding.bean.User" />
+
+        <variable
+            name="mode"
+            type="Integer" />
+
+        <variable
+            name="kejian"
+            type="Boolean" />
+
+        <import type="android.view.View" />
     </data>
 
     <LinearLayout
@@ -21,6 +32,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.lastName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试用的"
+            android:visibility="@{mode==3?View.VISIBLE:View.GONE}" />
 
     </LinearLayout>
 
